@@ -1,7 +1,8 @@
 import { useState, type FormEvent, type ReactNode } from "react";
 import { Link, createFileRoute, useNavigate } from "@tanstack/react-router";
-import { ArrowLeft, Eye, EyeOff, Loader2, MoonStar, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowLeft, Eye, EyeOff, Loader2, ShieldCheck, Sparkles } from "lucide-react";
 import { z } from "zod";
+import daruLogo from "@/assets/Daru-Logo.png";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable";
 import { Button } from "@/components/ui/button";
@@ -340,7 +341,7 @@ function AuthShell({
         <section className="rounded-xl border bg-card p-7 shadow-xl sm:p-9">
           <div className="mb-7 text-center">
             <span className="mx-auto grid size-12 place-items-center rounded-xl bg-primary text-primary-foreground shadow-md">
-              <MoonStar className="size-6 text-accent" />
+              <img src={daruLogo} alt="Darul Hijra logo" className="size-8 object-contain" />
             </span>
             <p className="mt-3 font-arabic text-xl font-bold text-primary" dir="rtl">
               دار الهجرة
