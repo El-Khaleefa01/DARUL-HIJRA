@@ -157,8 +157,8 @@ function Index() {
   const programmes = [
     {
       icon: BookOpen,
-      title: "Qur’an & Tajweed",
-      arabic: "القرآن والتجويد",
+      title: "Qur’an & Tafseer",
+      arabic: "القرآن والتفسير",
       text: "Comprehensive recitation, memorisation (Tahfiz) and rules of accurate, melodious articulation.",
       highlights: ["Hafs 'an 'Asim tajweed", "Systematic Hifdh track", "Certified Asanid masters"],
     },
@@ -395,8 +395,8 @@ function Index() {
           <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y px-5 md:grid-cols-4 md:divide-y-0 lg:px-8">
             {[
               ["500+", "Active Learners", "Across primary and secondary tiers"],
-              ["35+", "Certified Teachers", "Trained scholars & educators"],
-              ["18", "Equipped Classes", "Small learner-to-teacher ratio"],
+              ["20+", "Certified Teachers", "Trained scholars & educators"],
+              ["10", "Equipped Classes", "Small learner-to-teacher ratio"],
               ["100%", "Accredited Curriculum", "Traditional and modern synthesis"],
             ].map(([value, label, sub]) => (
               <div key={label} className="px-4 py-8 text-center sm:px-6">
@@ -582,7 +582,7 @@ function Index() {
             <div className="grid gap-8 md:grid-cols-3">
               <div>
                 <strong className="block font-display text-xl text-primary">
-                  Darul Hijra College
+                  Darul Hijra Arabic & Islamic College
                 </strong>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Center for excellence in classical Arabic, Qur&apos;anic studies, and holistic
@@ -591,11 +591,11 @@ function Index() {
               </div>
               <div>
                 <strong className="block text-sm font-bold uppercase tracking-wider text-foreground">
-                  Campus Address
+                  School Address
                 </strong>
                 <p className="mt-2 text-sm text-muted-foreground flex items-start gap-2">
                   <MapPin className="size-4 shrink-0 mt-0.5 text-primary" />
-                  <span>College Road, Knowledge City, Islamic Education Zone</span>
+                  <span>No 36, Wheather Head, Sabon Gari, Kano State</span>
                 </p>
               </div>
               <div>
@@ -623,7 +623,7 @@ function Index() {
             © {new Date().getFullYear()} Darul Hijra Arabic & Islamic College. All rights reserved.
           </span>
           <span className="font-arabic text-xl font-bold text-primary" dir="rtl">
-            دار الهجرة للعلوم العربية والإسلامية
+            دار الهجرة للدراسات العربية والإسلامية
           </span>
         </div>
       </footer>
