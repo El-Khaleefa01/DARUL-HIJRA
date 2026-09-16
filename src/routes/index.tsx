@@ -400,14 +400,233 @@ function Index() {
               ["100%", "Accredited Curriculum", "Traditional and modern synthesis"],
             ].map(([value, label, sub]) => (
               <div key={label} className="px-4 py-8 text-center sm:px-6">
-                <strong className="block text-3xl font-bold text-primary">{value}</strong>
-                <span className="mt-1 block font-semibold">{label}</span>
-                <span className="mt-1 block text-xs text-muted-foreground">{sub}</span>
+                <strong className="block font-display text-3xl font-bold text-primary sm:text-4xl">
+                  {value}
+                </strong>
+                <span className="mt-1 block text-sm font-bold uppercase tracking-wider text-foreground">
+                  {label}
+                </span>
+                <small className="mt-1 block text-xs text-muted-foreground">{sub}</small>
               </div>
             ))}
           </div>
         </section>
+
+        {/* Programmes Section */}
+        <section id="programmes" className="islamic-pattern py-24">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <div className="max-w-2xl">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
+                Our Educational Tradition
+              </p>
+              <h2 className="mt-3 text-3xl font-bold md:text-5xl">
+                Knowledge that shapes the whole individual
+              </h2>
+              <p className="mt-4 text-base text-muted-foreground md:text-lg">
+                Structured pedagogical pathways designed to nurture confident scholars, articulate
+                speakers, and upright community leaders grounded in Prophetic values.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-8 md:grid-cols-3">
+              {programmes.map(({ icon: Icon, title, arabic, text, highlights }) => (
+                <article
+                  key={title}
+                  className="flex flex-col justify-between rounded-xl border bg-card p-8 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+                >
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="grid size-12 place-items-center rounded-lg bg-secondary text-primary">
+                        <Icon className="size-6" />
+                      </span>
+                      <p className="font-arabic text-2xl font-bold text-primary" dir="rtl">
+                        {arabic}
+                      </p>
+                    </div>
+                    <h3 className="mt-6 text-2xl font-bold text-foreground">{title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{text}</p>
+                  </div>
+
+                  <div className="mt-6 pt-6 border-t">
+                    <p className="text-xs font-bold uppercase tracking-wider text-primary mb-3">
+                      Key Pillars:
+                    </p>
+                    <ul className="space-y-1.5 text-xs text-muted-foreground">
+                      {highlights.map((h) => (
+                        <li key={h} className="flex items-center gap-2">
+                          <span className="size-1.5 rounded-full bg-accent" /> {h}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Admissions CTA Section */}
+        <section
+          id="admissions"
+          className="bg-primary py-20 text-primary-foreground relative overflow-hidden"
+        >
+          <div className="absolute right-0 top-0 translate-x-12 -translate-y-12 opacity-10 pointer-events-none">
+            <Sparkles className="size-96 text-primary-foreground" />
+          </div>
+          <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-5 md:flex-row md:items-center lg:px-8 relative z-10">
+            <div className="max-w-2xl">
+              <span className="inline-block rounded-full bg-accent/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-accent mb-3">
+                Admissions Portal
+              </span>
+              <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+                Ready to begin your journey at Darul Hijra?
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-primary-foreground/85 md:text-lg">
+                Create your student portal account, submit your admission details online, and follow
+                your screening, class placement, and academic records in real-time.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+              <Button
+                asChild
+                size="lg"
+                className="bg-accent text-accent-foreground font-semibold hover:bg-accent/90 shadow-md h-12 px-6"
+              >
+                <Link to="/register">
+                  Apply for Admission <ArrowRight className="ml-2 size-5" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-primary-foreground/40 bg-primary/20 text-primary-foreground hover:bg-primary-foreground/15 h-12 px-6"
+              >
+                <Link to="/auth">Already Enrolled? Login</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* News & Events Section */}
+        <section id="news" className="py-24 bg-background">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
+                  College Life & Campus Notices
+                </p>
+                <h2 className="mt-2 text-3xl font-bold md:text-4xl">News & Academic Events</h2>
+              </div>
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <CalendarDays className="size-5" /> Active Academic Term 2026/2027
+              </div>
+            </div>
+
+            <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {news.map((item) => (
+                <article
+                  key={item.id}
+                  className="flex flex-col justify-between rounded-lg border border-t-4 border-t-primary bg-card p-6 shadow-sm transition-all hover:shadow-md"
+                >
+                  <div>
+                    <span className="inline-block rounded bg-secondary px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-primary">
+                      {item.category}
+                    </span>
+                    <h3 className="mt-4 text-xl font-bold leading-snug text-foreground">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="mt-6 text-xs font-semibold text-muted-foreground">{item.date}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-14 rounded-xl border bg-card p-6 shadow-sm">
+              <div className="flex items-center justify-between border-b pb-4 mb-6">
+                <div>
+                  <h3 className="text-xl font-bold text-foreground">Upcoming Campus Schedule</h3>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Key college dates, examinations, and community gatherings
+                  </p>
+                </div>
+                <Button asChild variant="outline" size="sm">
+                  <Link to="/auth">View In Portal →</Link>
+                </Button>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-3">
+                {events.map((ev) => (
+                  <div key={ev.id} className="rounded-lg bg-secondary/70 p-4">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase text-primary">
+                      <CalendarDays className="size-4" />
+                      <span>{ev.date}</span>
+                    </div>
+                    <strong className="mt-2 block text-base font-semibold text-foreground">
+                      {ev.title}
+                    </strong>
+                    <span className="mt-2 block text-xs text-muted-foreground">
+                      <MapPin className="inline size-3 mr-1" />
+                      {ev.venue}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact and Location Section */}
+        <section id="contact" className="border-t bg-muted/40 py-16">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <div className="grid gap-8 md:grid-cols-3">
+              <div>
+                <strong className="block font-display text-xl text-primary">
+                  Darul Hijra Arabic & Islamic College
+                </strong>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Center for excellence in classical Arabic, Qur&apos;anic studies, and holistic
+                  Islamic education.
+                </p>
+              </div>
+              <div>
+                <strong className="block text-sm font-bold uppercase tracking-wider text-foreground">
+                  School Address
+                </strong>
+                <p className="mt-2 text-sm text-muted-foreground flex items-start gap-2">
+                  <MapPin className="size-4 shrink-0 mt-0.5 text-primary" />
+                  <span>No 36, Wheather Head, Sabon Gari, Kano State</span>
+                </p>
+              </div>
+              <div>
+                <strong className="block text-sm font-bold uppercase tracking-wider text-foreground">
+                  Admissions Enquiries
+                </strong>
+                <p className="mt-2 text-sm text-muted-foreground flex items-center gap-2">
+                  <Mail className="size-4 text-primary" />
+                  <span>admissions@darulhijra.edu</span>
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground flex items-center gap-2">
+                  <Phone className="size-4 text-primary" />
+                  <span>+234 (0) 800-DARUL-HIJRA</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+
+      {/* Footer */}
+      <footer className="border-t bg-card">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-8 text-sm text-muted-foreground md:flex-row lg:px-8">
+          <span>
+            © {new Date().getFullYear()} Darul Hijra Arabic & Islamic College. All rights reserved.
+          </span>
+          <span className="font-arabic text-xl font-bold text-primary" dir="rtl">
+            دار الهجرة للدراسات العربية والإسلامية
+          </span>
+        </div>
+      </footer>
     </div>
   );
 }
