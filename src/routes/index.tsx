@@ -6,7 +6,6 @@ import {
   CalendarDays,
   GraduationCap,
   Menu,
-  MoonStar,
   Users,
   X,
   Sparkles,
@@ -15,6 +14,7 @@ import {
   MapPin,
 } from "lucide-react";
 import campusImage from "@/assets/darul-hijra-campus.jpg";
+import daruLogo from "@/assets/Daru-Logo.png";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -214,7 +214,7 @@ function Index() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
           <Link to="/" className="flex items-center gap-3 text-primary-foreground group">
             <span className="grid size-11 place-items-center rounded-lg border border-primary-foreground/30 bg-primary shadow-inner transition-transform group-hover:scale-105">
-              <MoonStar className="size-6 text-accent" />
+              <img src={daruLogo} alt="Darul Hijra logo" className="size-8 object-contain" />
             </span>
             <span>
               <strong className="block font-display text-lg tracking-tight">DARUL HIJRA</strong>
@@ -358,7 +358,7 @@ function Index() {
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/55 to-primary/30" />
           <div className="relative mx-auto w-full max-w-7xl px-5 pb-20 pt-36 text-primary-foreground lg:px-8 lg:pb-24">
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-primary/80 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-accent backdrop-blur-sm mb-6">
-              <MoonStar className="size-3.5" /> Faith · Knowledge · Character
+              <Sparkles className="size-3.5" /> Faith · Knowledge · Character
             </div>
             <h1 className="max-w-4xl text-4xl font-bold leading-[1.1] md:text-6xl lg:text-7xl">
               Learning rooted in authentic faith, built for the modern future.
@@ -471,7 +471,7 @@ function Index() {
           className="bg-primary py-20 text-primary-foreground relative overflow-hidden"
         >
           <div className="absolute right-0 top-0 translate-x-12 -translate-y-12 opacity-10 pointer-events-none">
-            <MoonStar className="size-96 text-primary-foreground" />
+            <Sparkles className="size-96 text-primary-foreground" />
           </div>
           <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-5 md:flex-row md:items-center lg:px-8 relative z-10">
             <div className="max-w-2xl">
