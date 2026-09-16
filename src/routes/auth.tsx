@@ -60,7 +60,6 @@ function AuthPage() {
       });
 
       if (error) {
-        // Clear any previous demo user
         localStorage.removeItem("darul_hijra_demo_user");
         const errMsg =
           error.message === "Invalid login credentials"
@@ -89,7 +88,6 @@ function AuthPage() {
     setLoading(true);
     setMessage("");
     try {
-      // First try lovable OAuth if running in lovable cloud
       const result = await lovable.auth.signInWithOAuth("google", {
         redirect_uri: `${window.location.origin}/dashboard`,
       });
@@ -101,7 +99,6 @@ function AuthPage() {
         navigate({ to: "/dashboard" });
       }
     } catch {
-      // Fall back to direct Supabase Google OAuth
       try {
         const { error } = await supabase.auth.signInWithOAuth({
           provider: "google",
@@ -271,7 +268,6 @@ function AuthPage() {
         Continue with Google
       </Button>
 
-      {/* Demo Portal Access Box */}
       <div className="mt-8 rounded-xl border border-primary/20 bg-primary/5 p-4 text-center">
         <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-primary uppercase tracking-wider">
           <Sparkles className="size-4" /> Instant Demo / Preview Access
@@ -341,7 +337,7 @@ function AuthShell({
         <section className="rounded-xl border bg-card p-7 shadow-xl sm:p-9">
           <div className="mb-7 text-center">
             <span className="mx-auto grid size-12 place-items-center rounded-xl bg-primary text-primary-foreground shadow-md">
-              <img src={daruLogo} alt="Darul Hijra logo" className="size-8 object-contain" />
+              <img src={daruLogo} alt="Darul Hijra logo" className="size-full object-contain" />
             </span>
             <p className="mt-3 font-arabic text-xl font-bold text-primary" dir="rtl">
               دار الهجرة
