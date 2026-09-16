@@ -83,7 +83,6 @@ function RegisterPage() {
         return;
       }
 
-      // If user has a session or user ID, also submit admission inquiry
       if (data.user) {
         try {
           await supabase.from("admissions").insert([
@@ -129,7 +128,7 @@ function RegisterPage() {
         <section className="rounded-xl border bg-card p-7 shadow-xl sm:p-10">
           <div className="text-center">
             <span className="mx-auto grid size-12 place-items-center rounded-xl bg-primary text-primary-foreground shadow-md">
-              <img src={daruLogo} alt="Darul Hijra logo" className="size-8 object-contain" />
+              <img src={daruLogo} alt="Darul Hijra logo" className="size-full object-contain" />
             </span>
             <p className="mt-3 font-arabic text-xl font-bold text-primary" dir="rtl">
               دار الهجرة
