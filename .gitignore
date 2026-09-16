@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.output/
+.nitro/
+.vinxi/
+.env
+.env.local
+tsconfig.tsbuildinfo
+darul-hijra/
