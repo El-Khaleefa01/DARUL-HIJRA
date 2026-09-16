@@ -1,7 +1,8 @@
 import { useState, type FormEvent } from "react";
 import { Link, createFileRoute, useNavigate } from "@tanstack/react-router";
-import { ArrowLeft, CheckCircle2, Loader2, MoonStar, ArrowRight } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Loader2, ArrowRight } from "lucide-react";
 import { z } from "zod";
+import daruLogo from "@/assets/Daru-Logo.png";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -128,7 +129,7 @@ function RegisterPage() {
         <section className="rounded-xl border bg-card p-7 shadow-xl sm:p-10">
           <div className="text-center">
             <span className="mx-auto grid size-12 place-items-center rounded-xl bg-primary text-primary-foreground shadow-md">
-              <MoonStar className="size-6 text-accent" />
+              <img src={daruLogo} alt="Darul Hijra logo" className="size-8 object-contain" />
             </span>
             <p className="mt-3 font-arabic text-xl font-bold text-primary" dir="rtl">
               دار الهجرة
