@@ -167,7 +167,7 @@ function RegisterPage() {
               </div>
             </div>
           ) : (
-            <form onSubmit={submit} className="mt-8 grid gap-5 sm:grid-cols-2">
+            <form noValidate onSubmit={submit} className="mt-8 grid gap-5 sm:grid-cols-2">
               <Field
                 label="Full Name (Legal)"
                 name="full_name"
@@ -252,7 +252,7 @@ function RegisterPage() {
                 disabled={loading}
               >
                 {loading && <Loader2 className="mr-2 size-5 animate-spin" />}
-                Create Student Account
+                {loading ? "Creating Account..." : "Create Student Account"}
               </Button>
             </form>
           )}
